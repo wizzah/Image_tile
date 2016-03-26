@@ -11,8 +11,7 @@ parser.add_argument('-nt', '--num_tiles', type=int, nargs='+', help='How many ti
 parser.set_defaults(allow_overlap=False)
 
 args = parser.parse_args()
-print args.small_image
-print args.num_tiles
+
 try:
 	big_im = Image.open(args.big_image)
 except IOError:
@@ -41,6 +40,7 @@ for index, small_im in enumerate(args.small_image):
 	for i in xrange(args.num_tiles[index]):
 		print args.num_tiles[index]
 		for n in xrange(args.tile_attempts):
+
 			# Random point within safe region
 			x_point = randint(0, diff_x)
 			y_point = randint(0, diff_y)
