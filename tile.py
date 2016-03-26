@@ -42,7 +42,7 @@ for i in xrange(args.num_tiles):
 
 		paste_rect = (x_point, y_point, x_point + small_width, y_point + small_height)
 		if not args.allow_overlap or not any([rectangle_overlap(r, paste_rect) for r in previous_placings]):
-			big_im.paste(small_im, paste_rect)
+			big_im.paste(small_im, paste_rect, small_im)
 			previous_placings.append(paste_rect)
 			break
 
